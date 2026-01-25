@@ -1,5 +1,10 @@
 name: Deploy to GitHub Pages
 
+# Prerequisites:
+# 1. Repository must be public (for GitHub Free accounts)
+# 2. GitHub Pages must be enabled in Settings > Pages > Source: GitHub Actions
+# 3. Repository must have Pages enabled (Settings > Pages)
+
 on:
   push:
     branches:
@@ -52,3 +57,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: false
