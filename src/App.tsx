@@ -11,13 +11,22 @@ import '@/styles/app.scss'
 const { Header, Content, Footer } = Layout
 
 function App() {
+  const cvUrl = `${import.meta.env.BASE_URL}cv.pdf`
+  
   return (
     <Layout className="layout-shell">
       <Header className="layout-shell__header">
-        <Typography.Title level={4} className="layout-shell__brand">
-          Hồ sơ cá nhân
-        </Typography.Title>
-        <Button type="primary" href={profileData.cvLink} target="_blank">
+        <div className="layout-shell__brand-wrapper">
+          <Typography.Title level={4} className="layout-shell__brand">
+            Profile
+          </Typography.Title>
+        </div>
+        <Button
+          type="primary"
+          className="layout-shell__cv-button"
+          href={cvUrl}
+          target="_blank"
+        >
           Download CV
         </Button>
       </Header>

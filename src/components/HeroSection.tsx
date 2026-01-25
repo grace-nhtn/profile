@@ -1,4 +1,4 @@
-import { Button, Flex, Space, Tag, Typography } from 'antd'
+import { Button, Flex, Space, Typography } from 'antd'
 import {
   DownloadOutlined,
   MailOutlined,
@@ -12,40 +12,72 @@ interface HeroSectionProps {
 }
 
 function HeroSection({ profile }: HeroSectionProps) {
+  const cvUrl = `${import.meta.env.BASE_URL}cv.pdf`
+  
   return (
     <section className="section section--hero">
-      <Space direction="vertical" size={12}>
-        <Tag color="blue">{profile.title}</Tag>
-        <Typography.Title level={2} className="section__title">
-          {profile.name}
-        </Typography.Title>
-        <Typography.Paragraph className="section__intro">
-          {profile.intro}
-        </Typography.Paragraph>
-      </Space>
+      <div className="hero-content">
+        <div className="hero-content__avatar-wrapper">
+          <img
+            src={`${import.meta.env.BASE_URL}avatar.jpg`}
+            alt={profile.name}
+            className="hero-content__avatar-img"
+            onError={(e) => {
+              console.error('Avatar failed to load, trying fallback')
+              const target = e.target as HTMLImageElement
+              target.src = '/avatar.jpg'
+            }}
+          />
+        </div>
+        <div className="hero-content__right">
+          <Space direction="vertical" size={16} className="hero-content__main">
+            <Typography.Title level={1} className="hero-content__title">
+              {profile.name}
+            </Typography.Title>
+            <Typography.Text className="hero-content__subtitle">
+              {profile.title}
+            </Typography.Text>
+            <Typography.Paragraph className="hero-content__description">
+              {profile.intro}
+            </Typography.Paragraph>
+          </Space>
 
-      <Flex gap={12} wrap>
-        <Button
-          type="primary"
-          icon={<DownloadOutlined />}
-          href={profile.cvLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Download CV
-        </Button>
-        <Button icon={<MailOutlined />} href={`mailto:${profile.contact.email}`}>
-          {profile.contact.email}
-        </Button>
-        <Button icon={<PhoneOutlined />} href={`tel:${profile.contact.phone}`}>
-          {profile.contact.phone}
-        </Button>
-      </Flex>
+          <Flex gap={12} wrap className="hero-content__actions">
+            <Button
+              type="primary"
+              size="large"
+              icon={<DownloadOutlined />}
+              href={cvUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="hero-content__cv-button"
+            >
+              Download CV
+            </Button>
+            <Button
+              size="large"
+              icon={<MailOutlined />}
+              href={`mailto:${profile.contact.email}`}
+              className="hero-content__contact-button"
+            >
+              {profile.contact.email}
+            </Button>
+            <Button
+              size="large"
+              icon={<PhoneOutlined />}
+              href={`tel:${profile.contact.phone}`}
+              className="hero-content__contact-button"
+            >
+              {profile.contact.phone}
+            </Button>
+          </Flex>
 
-      <Flex gap={8} align="center">
-        <EnvironmentOutlined />
-        <Typography.Text>{profile.contact.location}</Typography.Text>
-      </Flex>
+          <Flex gap={8} align="center" className="hero-content__location">
+            <EnvironmentOutlined />
+            <Typography.Text>{profile.contact.location}</Typography.Text>
+          </Flex>
+        </div>
+      </div>
     </section>
   )
 }

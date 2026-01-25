@@ -36,6 +36,7 @@ export interface ProfileData {
   name: string
   title: string
   intro: string
+  avatar?: string
   contact: ContactInfo
   experience: ExperienceItem[]
   education: EducationItem[]

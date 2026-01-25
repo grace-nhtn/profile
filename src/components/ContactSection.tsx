@@ -23,20 +23,20 @@ function ContactSection({ contact }: ContactSectionProps) {
       </Space>
 
       <Card className="section-card" bordered={false}>
-        <Space direction="vertical" size={12}>
-          <Flex gap={10} align="center">
+        <Space direction="vertical" size={12} style={{ width: '100%' }}>
+          <Flex gap={10} align="center" justify="flex-start">
             <MailOutlined />
             <Typography.Link href={`mailto:${contact.email}`}>
               {contact.email}
             </Typography.Link>
           </Flex>
-          <Flex gap={10} align="center">
+          <Flex gap={10} align="center" justify="flex-start">
             <PhoneOutlined />
             <Typography.Link href={`tel:${contact.phone}`}>
               {contact.phone}
             </Typography.Link>
           </Flex>
-          <Flex gap={10} align="center">
+          <Flex gap={10} align="center" justify="flex-start">
             <EnvironmentOutlined />
             <Typography.Text>{contact.location}</Typography.Text>
           </Flex>

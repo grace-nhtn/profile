@@ -19,7 +19,7 @@ function ProjectsSection({ items }: ProjectsSectionProps) {
 
       <Row gutter={[16, 16]}>
         {items.map((project) => (
-          <Col key={project.name} xs={24} sm={12} lg={8}>
+          <Col key={project.name} xs={24} sm={12}>
             <Card className="section-card project-card" bordered={false}>
               <Space direction="vertical" size={8}>
                 <Typography.Title level={4} className="section-card__title">

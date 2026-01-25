@@ -31,7 +31,7 @@ function ExperienceSection({ items }: ExperienceSectionProps) {
                   <Typography.Title level={4} className="section-card__title">
                     {item.company}
                   </Typography.Title>
-                  <Tag color="geekblue">{item.role}</Tag>
+                  <Tag color="orange">{item.role}</Tag>
                 </Space>
                 <Typography.Text type="secondary">
                   {item.start} - {item.end}

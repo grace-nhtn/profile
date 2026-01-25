@@ -22,7 +22,7 @@ function SkillsSection({ items }: SkillsSectionProps) {
                             <Typography.Text strong>{group.label}</Typography.Text>
                             <Space wrap size={[8, 8]}>
                                 {group.items.map((skill) => (
-                                    <Tag key={skill} color="blue">
+                                    <Tag key={skill} color="orange">
                                         {skill}
                                     </Tag>
                                 ))}
