@@ -1,7 +1,6 @@
 import { Card, Flex, Space, Typography } from 'antd'
 import {
   MailOutlined,
-  PhoneOutlined,
   EnvironmentOutlined,
 } from '@ant-design/icons'
 import type { ContactInfo } from '@/model/profile'
@@ -28,12 +27,6 @@ function ContactSection({ contact }: ContactSectionProps) {
             <MailOutlined />
             <Typography.Link href={`mailto:${contact.email}`}>
               {contact.email}
-            </Typography.Link>
-          </Flex>
-          <Flex gap={10} align="center" justify="flex-start">
-            <PhoneOutlined />
-            <Typography.Link href={`tel:${contact.phone}`}>
-              {contact.phone}
             </Typography.Link>
           </Flex>
           <Flex gap={10} align="center" justify="flex-start">

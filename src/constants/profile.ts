@@ -2,39 +2,38 @@ import type { ProfileData } from '@/model/profile'
 
 export const profileData: ProfileData = {
   name: 'Nguyen Hoai Thanh Ngoc',
-  title: 'Web Developer (ReactJS / Ant Design)',
+  title: 'Senior Frontend Developer',
   intro:
-    '4 năm kinh nghiệm với ReactJS, yêu thích thử thách và cải tiến sản phẩm. Mong muốn mở rộng sang backend và hướng tới full-stack.',
+    'Hơn 6 năm kinh nghiệm phát triển frontend với ReactJS và TypeScript. Tham gia thiết kế và phát triển các ứng dụng web, tập trung vào performance, maintainability và user experience. Đóng góp vào việc xây dựng kiến trúc scalable và hỗ trợ team members. Đang học hỏi và mở rộng kiến thức sang backend để hướng tới full-stack development.',
   cvLink: '/cv.pdf',
   contact: {
-    phone: '0363295271',
     email: 'ngocnht.uit@gmail.com',
-    location: 'District 7, Ho Chi Minh City, Vietnam',
+    location: 'District Binh Thanh, Ho Chi Minh City, Vietnam',
   },
   experience: [
     {
       company: 'GHN Express',
-      role: 'Web Developer',
-      start: '06/2020',
+      role: 'Senior Frontend Developer',
+      start: '07/2020',
       end: 'Hiện tại',
       summary:
-        'Tham gia xây dựng và nâng cấp các sản phẩm nội bộ, phối hợp đa phòng ban và hỗ trợ onboard thành viên mới.',
+        'Tham gia phát triển và nâng cấp các sản phẩm nội bộ, đóng góp vào việc thiết kế kiến trúc frontend và các quyết định kỹ thuật. Phối hợp với các team khác để đảm bảo chất lượng và tính nhất quán của sản phẩm.',
       highlights: [
-        'Đề xuất và triển khai các tính năng cần thiết cho sản phẩm',
-        'Hỗ trợ xây dựng nền tảng code cho các dự án tương lai',
-        'Mentor thành viên mới về quy trình và kiến trúc dự án',
+        'Phát triển các tính năng phức tạp, tập trung vào performance và khả năng mở rộng của ứng dụng',
+        'Tham gia xây dựng foundation architecture và coding standards để cải thiện maintainability',
+        'Hỗ trợ và chia sẻ kinh nghiệm với các thành viên mới về best practices và project structure',
       ],
     },
     {
       company: 'Beesight Soft',
-      role: 'Web Developer',
+      role: 'Frontend Developer',
       start: '06/2018',
-      end: '02/2020',
+      end: '06/2020',
       summary:
-        'Làm outsourcing đa dạng dự án ReactJS/PhoneGap, đánh giá yêu cầu, đưa giải pháp và triển khai.',
+        'Tham gia phát triển đa dạng các dự án outsourcing với stack ReactJS và PhoneGap. Đảm nhiệm việc phân tích requirements, đánh giá technical feasibility và thiết kế solution architecture phù hợp với business needs của khách hàng.',
       highlights: [
-        'Phân tích khả thi và đề xuất giải pháp cho yêu cầu khách hàng',
-        'Xây dựng các ứng dụng web và mobile hybrid bằng ReactJS',
+        'Phân tích và đánh giá technical requirements, đề xuất optimal solutions dựa trên constraints và best practices',
+        'Phát triển các ứng dụng web responsive và mobile hybrid applications sử dụng ReactJS, đảm bảo cross-platform compatibility',
       ],
     },
   ],
@@ -50,7 +49,7 @@ export const profileData: ProfileData = {
   skills: [
     {
       label: 'Ngôn ngữ',
-      items: ['Javascript', 'Typescript', 'CSS', 'HTML'],
+      items: ['Javascript', 'Typescript', 'CSS', 'HTML', "Golang"],
     },
     {
       label: 'Framework',
@@ -58,72 +57,65 @@ export const profileData: ProfileData = {
     },
     {
       label: 'Thư viện & Công cụ',
-      items: ['Ant Design', 'Bootstrap', 'Redux'],
+      items: ['Ant Design', 'Bootstrap', 'Redux', 'Tailwind CSS'],
     },
   ],
   projects: [
     {
       name: 'Payroll',
       timeframe: '09/2022 - Nay',
-      role: 'Developer',
+      role: 'Senior Developer',
       description:
-        'Hệ thống quản lý CnB, tự động tính lương/hoa hồng, import/export dữ liệu và tích hợp giao dịch ngân hàng.',
+        'Hệ thống quản lý tính lương với khả năng tự động hóa tính toán lương và hoa hồng. Tham gia phát triển module import/export dữ liệu và tích hợp API banking để xử lý giao dịch. Tập trung vào performance optimization và data validation cho hệ thống.',
     },
     {
       name: 'HRM Core',
       timeframe: '04/2022 - Nay',
-      role: 'Developer',
+      role: 'Senior Developer',
       description:
-        'Hệ thống quản lý nhân sự: phòng ban, nhân viên, hợp đồng, ca làm việc; xây dựng UI với ReactJS + Ant Design.',
+        'Hệ thống quản lý nhân sự quản lý organizational structure, employee records, contracts và shift scheduling. Phát triển UI/UX với ReactJS và Ant Design, tập trung vào scalability và maintainability.',
     },
     {
       name: 'Candidate',
       timeframe: '06/2022 - 08/2022',
       role: 'Developer',
       description:
-        'Quản lý ứng viên end-to-end: cấu hình bước phỏng vấn, hành động theo step, phân tích và cộng tác.',
+        'Hệ thống quản lý ứng viên với workflow engine cho phép cấu hình linh hoạt các bước phỏng vấn. Tham gia phát triển state management cho candidate journey, tích hợp analytics dashboard và collaboration features.',
     },
     {
       name: 'ZNS Chat',
       timeframe: '03/2022 - 05/2022',
       role: 'Developer',
       description:
-        'Chat service tích hợp Zalo, realtime qua Socket.IO và lưu trữ với DexieDB.',
+        'Dịch vụ chat real-time tích hợp Zalo Official Account API. Phát triển WebSocket connection layer với Socket.IO và implement offline-first architecture với IndexedDB (DexieDB) để đồng bộ dữ liệu.',
     },
     {
       name: 'Cost',
       timeframe: '01/2022 - 04/2022',
       role: 'Developer',
       description:
-        'Quản lý quy trình mua sắm theo phòng ban, cấu hình loại yêu cầu và người phụ trách.',
-    },
-    {
-      name: 'CRM',
-      timeframe: '04/2021 - Nay',
-      role: 'Developer',
-      description:
-        'Quản lý khách hàng, hợp đồng, ví và chuyển khoản; công cụ import dữ liệu lớn và cấu hình game engagement.',
+        'Hệ thống quản lý mua sắm với approval workflow theo organizational hierarchy. Phát triển configurable request types và role-based assignment system để quản lý quy trình mua sắm.',
     },
     {
       name: 'Notification',
       timeframe: '01/2021 - 03/2021',
       role: 'Developer',
       description:
-        'Hệ thống quản lý thông báo (alert/banner) cho web/app, xây dựng với React Bootstrap.',
+        'Hệ thống quản lý thông báo tập trung cho multi-platform (web/mobile app). Phát triển với React và Bootstrap, hỗ trợ quản lý alerts và banners với scheduling và targeting.',
     },
     {
       name: 'Fixle',
       timeframe: '11/2018 - 04/2019',
       role: 'Developer',
       description:
-        'Ứng dụng quản lý sửa chữa nhà cho client/company/provider, hỗ trợ phân quyền và luồng giao việc.',
+        'Nền tảng quản lý sửa chữa nhà multi-tenant phục vụ clients, companies và service providers. Phát triển role-based access control (RBAC) và workflow engine để quản lý job assignment và tracking.',
     },
     {
       name: 'Primary ITO',
       timeframe: '03/2019 - 12/2019',
       role: 'Developer',
       description:
-        'Ứng dụng training cho Primary Sector, quản lý workplace/learner, theo dõi tiến độ và tạo báo cáo PDF.',
+        'Hệ thống quản lý đào tạo (LMS) cho Primary Sector với features quản lý workplaces, learners và training programs. Phát triển progress tracking dashboard và PDF report generation với customizable templates.',
     },
   ],
 }

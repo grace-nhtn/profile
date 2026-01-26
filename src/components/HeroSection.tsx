@@ -2,7 +2,6 @@ import { Button, Flex, Space, Typography } from 'antd'
 import {
   DownloadOutlined,
   MailOutlined,
-  PhoneOutlined,
   EnvironmentOutlined,
 } from '@ant-design/icons'
 import type { ProfileData } from '@/model/profile'
@@ -61,14 +60,6 @@ function HeroSection({ profile }: HeroSectionProps) {
               className="hero-content__contact-button"
             >
               {profile.contact.email}
-            </Button>
-            <Button
-              size="large"
-              icon={<PhoneOutlined />}
-              href={`tel:${profile.contact.phone}`}
-              className="hero-content__contact-button"
-            >
-              {profile.contact.phone}
             </Button>
           </Flex>
 
