@@ -50,7 +50,7 @@ function BlogCard({ post }: BlogCardProps) {
         </Space>
         <div className="blog-card__tags">
           {post.tags.map((tag) => (
-            <Tag key={tag} size="small">
+            <Tag key={tag} style={{ fontSize: '14px' }}>
               {tag}
             </Tag>
           ))}
