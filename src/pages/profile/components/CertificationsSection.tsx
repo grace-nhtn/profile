@@ -1,6 +1,7 @@
-import { Card, List, Space, Typography } from 'antd'
+import { Card, Flex, List, Typography, theme } from 'antd'
 import { useTranslation } from 'react-i18next'
 import type { CertificationItem } from '@/model/profile'
+import { SECTION_STYLES } from '@/styles/constants'
 
 interface CertificationsSectionProps {
   items: CertificationItem[]
@@ -8,32 +9,33 @@ interface CertificationsSectionProps {
 
 function CertificationsSection({ items }: CertificationsSectionProps) {
   const { t } = useTranslation()
+  const { token: { colorText, colorTextSecondary, colorBorderSecondary, colorPrimary } } = theme.useToken()
   
   if (!items || items.length === 0) {
     return null
   }
   
   return (
-    <section className="section">
-      <Space direction="vertical" size={16} className="section__header">
-        <Typography.Title level={3} className="section__title">
+    <section style={{ width: '100%' }}>
+      <Flex vertical gap={5} style={{marginBottom: 15}}>
+        <Typography.Title level={3} style={{ ...SECTION_STYLES.title, color: colorText }}>
           {t('sections.certifications.title')}
         </Typography.Title>
-        <Typography.Text type="secondary">
+        <Typography.Text style={{ ...SECTION_STYLES.subtitle, color: colorTextSecondary }}>
           {t('sections.certifications.subtitle')}
         </Typography.Text>
-      </Space>
+      </Flex>
 
       <List
         dataSource={items}
         renderItem={(item) => (
-          <List.Item>
-            <Card className="section-card" bordered={false}>
-              <Space direction="vertical" size={4}>
-                <Typography.Title level={4} className="section-card__title">
+          <List.Item style={{ borderBlockEnd: `1px solid ${colorBorderSecondary}` }}>
+            <Card style={{ width: '100%', borderTop: `4px solid ${colorPrimary}` }}>
+              <Flex vertical gap={4}>
+                <Typography.Title level={4} style={{ fontSize: 18, marginBottom: 4 }}>
                   {item.name}
                 </Typography.Title>
-                <Typography.Text type="secondary">
+                <Typography.Text type="secondary" style={{ display: 'block' }}>
                   {item.issuer} · {item.issueDate}
                   {item.expiryDate && ` - ${item.expiryDate}`}
                 </Typography.Text>
@@ -47,7 +49,7 @@ function CertificationsSection({ items }: CertificationsSectionProps) {
                     View Credential
                   </Typography.Link>
                 )}
-              </Space>
+              </Flex>
             </Card>
           </List.Item>
         )}

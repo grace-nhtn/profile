@@ -1,12 +1,17 @@
-import { Space, Button, Typography } from 'antd'
+import { Space, Button, Typography, Layout, theme } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { GlobalOutlined, DownloadOutlined } from '@ant-design/icons'
 import { useState, useEffect } from 'react'
+
+const { Header: AntHeader } = Layout
 
 function Header() {
   const { t, i18n } = useTranslation()
   const [currentLang, setCurrentLang] = useState(i18n.language)
   const cvUrl = `${import.meta.env.BASE_URL}cv.pdf`
+  const {
+    token: { colorBgContainer, colorBorderSecondary },
+  } = theme.useToken()
 
   useEffect(() => {
     setCurrentLang(i18n.language)
@@ -19,31 +24,39 @@ function Header() {
   }
 
   return (
-    <header className="main-header">
-      <div className="main-header__left">
-        <Typography.Title level={4} className="main-header__brand">
+    <AntHeader
+      style={{
+        background: colorBgContainer,
+        borderBottom: `1px solid ${colorBorderSecondary}`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '0 24px',
+        position: 'sticky',
+        top: 0,
+        zIndex: 10,
+        width: '100%',
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Typography.Title level={4} style={{ margin: 0, fontSize: 20 }}>
           {t('common.profile')}
         </Typography.Title>
       </div>
-      <Space className="main-header__actions">
-        <Button
-          icon={<GlobalOutlined />}
-          onClick={toggleLanguage}
-          className="main-header__lang-button"
-        >
+      <Space>
+        <Button icon={<GlobalOutlined />} onClick={toggleLanguage}>
           {currentLang === 'en' ? 'VI' : 'EN'}
         </Button>
         <Button
           type="primary"
           icon={<DownloadOutlined />}
-          className="main-header__cv-button"
           href={cvUrl}
           target="_blank"
         >
           {t('common.downloadCV')}
         </Button>
       </Space>
-    </header>
+    </AntHeader>
   )
 }
 

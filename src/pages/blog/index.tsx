@@ -1,6 +1,6 @@
 import { Typography } from 'antd'
 import { useTranslation } from 'react-i18next'
-import BlogList from '@/components/blog/BlogList'
+import BlogList from './components/BlogList'
 import { blogData } from '@/constants/blog'
 
 function BlogPage() {

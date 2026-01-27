@@ -1,7 +1,7 @@
 import { Typography } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { profileData } from '@/constants/profile'
-import ProjectsSection from '@/components/portfolio/ProjectsSection'
+import ProjectsSection from './components/ProjectsSection'
 
 function PortfolioPage() {
   const { t } = useTranslation()

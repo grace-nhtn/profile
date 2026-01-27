@@ -1,6 +1,7 @@
 export default {
   common: {
     downloadCV: 'Download CV',
+    sendEmail: 'Send Email',
     profile: 'Profile',
     current: 'Present',
     present: 'Present',

@@ -1,6 +1,7 @@
 export default {
   common: {
     downloadCV: 'Tải CV',
+    sendEmail: 'Gửi Email',
     profile: 'Hồ sơ',
     current: 'Hiện tại',
     present: 'Hiện tại',

@@ -1,6 +1,14 @@
 # Personal Profile Website
 
-Personal profile website built with React + TypeScript + Vite + Ant Design.
+A modern personal profile website with multi-language support, built with React + TypeScript + Vite + Ant Design.
+
+## Features
+
+- 🌐 **Multi-language Support** - English and Vietnamese with i18n
+- 📱 **Responsive Design** - Mobile-first approach
+- 🎨 **Modern UI** - Clean design with sidebar navigation
+- 📄 **Multiple Pages** - Profile, Blog, and Portfolio sections
+- 🎯 **Type Safety** - Full TypeScript support
 
 ## Tech Stack
 
@@ -8,6 +16,8 @@ Personal profile website built with React + TypeScript + Vite + Ant Design.
 - **TypeScript** - Type safety
 - **Vite** - Build tool
 - **Ant Design** - UI component library
+- **React Router** - Client-side routing
+- **react-i18next** - Internationalization
 - **SCSS** - Styling
 
 ## Development
@@ -71,12 +81,39 @@ Once deployed, your site will be available at:
 
 ```
 src/
-├── components/     # React components
-├── constants/      # Constants and data
-├── model/          # TypeScript interfaces
-├── styles/         # SCSS stylesheets
-└── main.tsx        # Entry point
+├── components/          # Shared components
+│   └── layout/        # Layout components (Sidebar, Header)
+├── pages/             # Feature pages
+│   ├── blog/          # Blog feature
+│   │   ├── components/  # Blog-specific components
+│   │   └── index.tsx    # Blog page entry
+│   ├── portfolio/     # Portfolio feature
+│   │   ├── components/  # Portfolio-specific components
+│   │   └── index.tsx    # Portfolio page entry
+│   └── profile/       # Profile feature
+│       ├── components/  # Profile-specific components
+│       └── index.tsx    # Profile page entry
+├── constants/          # Constants and data
+├── i18n/              # Internationalization
+├── model/             # TypeScript interfaces
+├── styles/            # Global styles (minimal)
+├── App.tsx            # Main app component
+└── main.tsx           # Entry point
 ```
+
+## Pages
+
+- **Profile** (`/`) - Personal information, experience, education, skills, and certifications
+- **Blog** (`/blog`) - Blog posts and articles
+- **Portfolio** (`/portfolio`) - Project showcase
+
+## Language Support
+
+The website supports two languages:
+- English (default)
+- Vietnamese
+
+Users can switch languages using the language switcher in the header.
 
 ## License
 
