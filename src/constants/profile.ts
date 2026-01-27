@@ -46,6 +46,7 @@ export const profileData: ProfileData = {
       gpa: 'GPA 7.8/10',
     },
   ],
+  certifications: [],
   skills: [
     {
       label: 'Ngôn ngữ',
@@ -65,57 +66,49 @@ export const profileData: ProfileData = {
       name: 'Payroll',
       timeframe: '09/2022 - Nay',
       role: 'Senior Developer',
-      description:
-        'Hệ thống quản lý tính lương với khả năng tự động hóa tính toán lương và hoa hồng. Tham gia phát triển module import/export dữ liệu và tích hợp API banking để xử lý giao dịch. Tập trung vào performance optimization và data validation cho hệ thống.',
+      translationKey: 'payroll',
     },
     {
       name: 'HRM Core',
       timeframe: '04/2022 - Nay',
       role: 'Senior Developer',
-      description:
-        'Hệ thống quản lý nhân sự quản lý organizational structure, employee records, contracts và shift scheduling. Phát triển UI/UX với ReactJS và Ant Design, tập trung vào scalability và maintainability.',
+      translationKey: 'hrm',
     },
     {
       name: 'Candidate',
       timeframe: '06/2022 - 08/2022',
       role: 'Developer',
-      description:
-        'Hệ thống quản lý ứng viên với workflow engine cho phép cấu hình linh hoạt các bước phỏng vấn. Tham gia phát triển state management cho candidate journey, tích hợp analytics dashboard và collaboration features.',
+      translationKey: 'candidate',
     },
     {
       name: 'ZNS Chat',
       timeframe: '03/2022 - 05/2022',
       role: 'Developer',
-      description:
-        'Dịch vụ chat real-time tích hợp Zalo Official Account API. Phát triển WebSocket connection layer với Socket.IO và implement offline-first architecture với IndexedDB (DexieDB) để đồng bộ dữ liệu.',
+      translationKey: 'znsChat',
     },
     {
       name: 'Cost',
       timeframe: '01/2022 - 04/2022',
       role: 'Developer',
-      description:
-        'Hệ thống quản lý mua sắm với approval workflow theo organizational hierarchy. Phát triển configurable request types và role-based assignment system để quản lý quy trình mua sắm.',
+      translationKey: 'cost',
     },
     {
       name: 'Notification',
       timeframe: '01/2021 - 03/2021',
       role: 'Developer',
-      description:
-        'Hệ thống quản lý thông báo tập trung cho multi-platform (web/mobile app). Phát triển với React và Bootstrap, hỗ trợ quản lý alerts và banners với scheduling và targeting.',
+      translationKey: 'notification',
     },
     {
       name: 'Fixle',
       timeframe: '11/2018 - 04/2019',
       role: 'Developer',
-      description:
-        'Nền tảng quản lý sửa chữa nhà multi-tenant phục vụ clients, companies và service providers. Phát triển role-based access control (RBAC) và workflow engine để quản lý job assignment và tracking.',
+      translationKey: 'fixle',
     },
     {
       name: 'Primary ITO',
       timeframe: '03/2019 - 12/2019',
       role: 'Developer',
-      description:
-        'Hệ thống quản lý đào tạo (LMS) cho Primary Sector với features quản lý workplaces, learners và training programs. Phát triển progress tracking dashboard và PDF report generation với customizable templates.',
+      translationKey: 'primaryITO',
     },
   ],
 }

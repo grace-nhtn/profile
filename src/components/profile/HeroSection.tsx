@@ -4,6 +4,7 @@ import {
   MailOutlined,
   EnvironmentOutlined,
 } from '@ant-design/icons'
+import { useTranslation } from 'react-i18next'
 import type { ProfileData } from '@/model/profile'
 
 interface HeroSectionProps {
@@ -11,6 +12,7 @@ interface HeroSectionProps {
 }
 
 function HeroSection({ profile }: HeroSectionProps) {
+  const { t } = useTranslation()
   const cvUrl = `${import.meta.env.BASE_URL}cv.pdf`
   
   return (
@@ -34,10 +36,10 @@ function HeroSection({ profile }: HeroSectionProps) {
               {profile.name}
             </Typography.Title>
             <Typography.Text className="hero-content__subtitle">
-              {profile.title}
+              {t('hero.title')}
             </Typography.Text>
             <Typography.Paragraph className="hero-content__description">
-              {profile.intro}
+              {t('hero.intro')}
             </Typography.Paragraph>
           </Space>
 
@@ -51,7 +53,7 @@ function HeroSection({ profile }: HeroSectionProps) {
               rel="noreferrer"
               className="hero-content__cv-button"
             >
-              Download CV
+              {t('common.downloadCV')}
             </Button>
             <Button
               size="large"

@@ -3,6 +3,7 @@ import {
   MailOutlined,
   EnvironmentOutlined,
 } from '@ant-design/icons'
+import { useTranslation } from 'react-i18next'
 import type { ContactInfo } from '@/model/profile'
 
 interface ContactSectionProps {
@@ -10,14 +11,16 @@ interface ContactSectionProps {
 }
 
 function ContactSection({ contact }: ContactSectionProps) {
+  const { t } = useTranslation()
+  
   return (
     <section className="section section--contact">
       <Space direction="vertical" size={16} className="section__header">
         <Typography.Title level={3} className="section__title">
-          Liên hệ
+          {t('sections.contact.title')}
         </Typography.Title>
         <Typography.Text type="secondary">
-          Sẵn sàng cho cơ hội remote/freelance và mở rộng sang backend.
+          {t('sections.contact.subtitle')}
         </Typography.Text>
       </Space>
 

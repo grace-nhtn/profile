@@ -1,4 +1,5 @@
 import { Card, List, Space, Tag, Typography } from 'antd'
+import { useTranslation } from 'react-i18next'
 import type { ExperienceItem } from '@/model/profile'
 
 interface ExperienceSectionProps {
@@ -6,14 +7,16 @@ interface ExperienceSectionProps {
 }
 
 function ExperienceSection({ items }: ExperienceSectionProps) {
+  const { t } = useTranslation()
+  
   return (
     <section className="section">
       <Space direction="vertical" size={16} className="section__header">
         <Typography.Title level={3} className="section__title">
-          Kinh nghiệm
+          {t('sections.experience.title')}
         </Typography.Title>
         <Typography.Text type="secondary">
-          Một số điểm chính trong quá trình làm việc gần đây.
+          {t('sections.experience.subtitle')}
         </Typography.Text>
       </Space>
 
@@ -31,10 +34,10 @@ function ExperienceSection({ items }: ExperienceSectionProps) {
                   <Typography.Title level={4} className="section-card__title">
                     {item.company}
                   </Typography.Title>
-                  <Tag color="orange">{item.role}</Tag>
+                  <Tag color="blue">{item.role}</Tag>
                 </Space>
                 <Typography.Text type="secondary">
-                  {item.start} - {item.end}
+                  {item.start} - {item.end === 'Hiện tại' ? t('common.current') : item.end}
                 </Typography.Text>
                 <Typography.Paragraph className="section-card__summary">
                   {item.summary}

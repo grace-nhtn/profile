@@ -1,65 +1,12 @@
+// Legacy styles - keeping for backward compatibility if needed
 .layout-shell {
   min-height: 100vh;
   background: #f8fafc;
-
-  &__header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    height: 72px;
-  }
-
-  &__brand-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  &__brand {
-    margin: 0 !important;
-    color: #0f172a !important;
-    font-weight: 600;
-    font-size: 20px;
-  }
-
-  &__cv-button {
-    height: 40px;
-    padding: 0 24px;
-    font-weight: 500;
-    border-radius: 8px;
-  }
-
-  &__content {
-    padding: 40px 32px 64px;
-    background-color: transparent;
-  }
-
-  &__sections {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__footer {
-    text-align: center;
-    padding: 24px;
-    background-color: #ffffff;
-    color: #475569;
-    border-top: 1px solid #e5e7eb;
-  }
 }
 
 .section {
-  width: 1000px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1000px;
   background-color: #ffffff;
   border-radius: 12px;
   padding: 32px;
@@ -67,6 +14,9 @@
   border: 1px solid #e5e7eb;
   margin: 0 auto;
   box-sizing: border-box;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -74,11 +24,11 @@
   }
 
   &--hero {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa366 100%);
+    background: linear-gradient(135deg, #1d5277 0%, #2d6287 50%, #3d7297 100%);
     border: none;
     padding: 48px 40px;
     color: #ffffff;
-    box-shadow: 0 8px 32px rgba(255, 107, 53, 0.2);
+    box-shadow: 0 8px 32px rgba(45, 98, 135, 0.3);
 
     .section__title {
       color: #ffffff !important;
@@ -115,7 +65,7 @@
       width: 4px;
       height: 28px;
       border-radius: 2px;
-      background: linear-gradient(180deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(180deg, #1d5277 0%, #2d6287 100%);
     }
 
     &::after {
@@ -125,7 +75,7 @@
 
   &__intro {
     margin-bottom: 0;
-    color: #64748b;
+    color: #475569;
     font-size: 15px;
     line-height: 1.6;
     text-align: left;
@@ -146,7 +96,7 @@
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: transform 200ms ease, box-shadow 200ms ease;
-  border-top: 4px solid #ff6b35;
+  border-top: 4px solid #2d6287;
   padding: 24px;
 
   &:hover {
@@ -163,7 +113,7 @@
 
   &__summary {
     margin: 8px 0 0;
-    color: #475569;
+    color: #1e293b;
     font-size: 15px;
     line-height: 1.6;
   }
@@ -210,12 +160,22 @@
   height: 100%;
 }
 
-// Orange tag styling
+// Blue tag styling
 .ant-tag {
+  &.ant-tag-blue {
+    background-color: #e8f0f7;
+    border-color: #b8d0e7;
+    color: #2d6287;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
   &.ant-tag-orange {
-    background-color: #fff4e6;
-    border-color: #ffd8a8;
-    color: #ff6b35;
+    background-color: #e8f0f7;
+    border-color: #b8d0e7;
+    color: #2d6287;
     font-weight: 500;
     padding: 4px 12px;
     border-radius: 6px;
@@ -227,7 +187,7 @@
 .ant-typography {
   &.ant-typography-secondary {
     font-size: 15px;
-    color: #64748b;
+    color: #475569;
   }
 }
 
@@ -302,7 +262,7 @@
 
   &__cv-button {
     background-color: #ffffff;
-    color: #ff6b35;
+    color: #2d6287;
     border-color: #ffffff;
     height: 48px;
     font-weight: 600;
@@ -311,7 +271,7 @@
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.95);
-      color: #ff6b35;
+      color: #2d6287;
       border-color: rgba(255, 255, 255, 0.95);
     }
   }

@@ -28,7 +28,17 @@ export interface ProjectItem {
   name: string
   timeframe: string
   role: string
-  description: string
+  translationKey: string
+  description?: string // Optional, for backward compatibility
+}
+
+export interface CertificationItem {
+  name: string
+  issuer: string
+  issueDate: string
+  expiryDate?: string
+  credentialId?: string
+  credentialUrl?: string
 }
 
 export interface ProfileData {
@@ -41,5 +51,6 @@ export interface ProfileData {
   education: EducationItem[]
   skills: SkillGroup[]
   projects: ProjectItem[]
+  certifications?: CertificationItem[]
   cvLink: string
 }

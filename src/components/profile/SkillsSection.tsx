@@ -1,4 +1,5 @@
 import { Card, Divider, Space, Tag, Typography } from "antd"
+import { useTranslation } from "react-i18next"
 import type { SkillGroup } from "@/model/profile"
 
 interface SkillsSectionProps {
@@ -6,13 +7,15 @@ interface SkillsSectionProps {
 }
 
 function SkillsSection({ items }: SkillsSectionProps) {
+    const { t } = useTranslation()
+    
     return (
         <section className="section">
             <Space direction="vertical" size={16} className="section__header">
                 <Typography.Title level={3} className="section__title">
-                    Kỹ năng
+                    {t('sections.skills.title')}
                 </Typography.Title>
-                <Typography.Text type="secondary">Ngôn ngữ, framework và công cụ đã dùng trong dự án.</Typography.Text>
+                <Typography.Text type="secondary">{t('sections.skills.subtitle')}</Typography.Text>
             </Space>
 
             <Card className="section-card" bordered={false}>
@@ -22,7 +25,7 @@ function SkillsSection({ items }: SkillsSectionProps) {
                             <Typography.Text strong>{group.label}</Typography.Text>
                             <Space wrap size={[8, 8]}>
                                 {group.items.map((skill) => (
-                                    <Tag key={skill} color="orange">
+                                    <Tag key={skill} color="blue">
                                         {skill}
                                     </Tag>
                                 ))}
