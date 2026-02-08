@@ -1,0 +1,38 @@
+@use './variables' as *;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: #{$breakpoint-sm}) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: #{$breakpoint-md}) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: #{$breakpoint-lg}) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: #{$breakpoint-xl}) {
+      @content;
+    }
+  }
+}
+
+@mixin section-title {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-sm;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+@mixin card {
+  background: var(--background);
+  border-radius: 8px;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

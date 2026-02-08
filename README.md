@@ -1,120 +1,140 @@
-# Personal Profile Website
+# Profile V2 - Personal Portfolio
 
-A modern personal profile website with multi-language support, built with React + TypeScript + Vite + Ant Design.
+A modern, responsive personal profile page built with ReactJS, TypeScript, Ant Design, and SCSS. Features bilingual support (English/Vietnamese) and a professional CV display.
 
 ## Features
 
-- 🌐 **Multi-language Support** - English and Vietnamese with i18n
-- 📱 **Responsive Design** - Mobile-first approach
-- 🎨 **Modern UI** - Clean design with sidebar navigation
-- 📄 **Multiple Pages** - Profile, Blog, and Portfolio sections
-- 🎯 **Type Safety** - Full TypeScript support
+- 🌐 **Bilingual Support**: Switch between English and Vietnamese
+- 📱 **Responsive Design**: 2-column layout on desktop, 1-column on mobile
+- 🎨 **Modern UI**: Built with Ant Design components and custom SCSS
+- ⚡ **Fast**: Powered by Vite for optimal performance
+- 🔧 **TypeScript**: Full type safety throughout the application
 
 ## Tech Stack
 
-- **React 19** - UI library
+- **React 18** - UI library
 - **TypeScript** - Type safety
-- **Vite** - Build tool
-- **Ant Design** - UI component library
-- **React Router** - Client-side routing
-- **react-i18next** - Internationalization
-- **SCSS** - Styling
-
-## Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start dev server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-## GitHub Pages Deployment
-
-This project is configured to automatically deploy to GitHub Pages via GitHub Actions.
-
-### Prerequisites (GitHub Free Account)
-
-**Important:** For GitHub Free accounts, your repository **must be public** to use GitHub Pages.
-
-### Setup Instructions
-
-1. **Ensure repository is public:**
-   - Go to **Settings** → **General** → **Danger Zone**
-   - If repository is private, change it to **Public**
-
-2. **Enable GitHub Pages:**
-   - Go to **Settings** → **Pages**
-   - Under **Source**, select **GitHub Actions** (NOT "Deploy from a branch")
-   - If you see "Your site is ready to be published", click **Save**
-
-3. **Verify workflow:**
-   - Go to **Actions** tab
-   - The workflow should run automatically on push to `main` branch
-   - Wait for the workflow to complete (first run may take 2-3 minutes)
-
-### Troubleshooting
-
-**Error: "Get Pages site failed" or "HttpError: Not Found"**
-- Make sure repository is **public** (required for GitHub Free)
-- Verify **Settings** → **Pages** → **Source** is set to **GitHub Actions**
-- Check that Pages is enabled (you should see a green checkmark in Settings → Pages)
-
-**Workflow runs but site doesn't load:**
-- Wait 1-2 minutes after workflow completes (DNS propagation)
-- Check the workflow logs in **Actions** tab for any errors
-- Verify the site URL: `https://yeolie.github.io/profile/`
-
-### Live Site
-
-Once deployed, your site will be available at:
-`https://yeolie.github.io/profile/`
+- **Vite** - Build tool and dev server
+- **Ant Design 5** - UI component library
+- **SCSS** - Styling with variables and mixins
 
 ## Project Structure
 
 ```
 src/
-├── components/          # Shared components
-│   └── layout/        # Layout components (Sidebar, Header)
-├── pages/             # Feature pages
-│   ├── blog/          # Blog feature
-│   │   ├── components/  # Blog-specific components
-│   │   └── index.tsx    # Blog page entry
-│   ├── portfolio/     # Portfolio feature
-│   │   ├── components/  # Portfolio-specific components
-│   │   └── index.tsx    # Portfolio page entry
-│   └── profile/       # Profile feature
-│       ├── components/  # Profile-specific components
-│       └── index.tsx    # Profile page entry
-├── constants/          # Constants and data
-├── i18n/              # Internationalization
-├── model/             # TypeScript interfaces
-├── styles/            # Global styles (minimal)
-├── App.tsx            # Main app component
-└── main.tsx           # Entry point
+├── components/          # Reusable components
+│   ├── ProfileHeader/
+│   ├── PersonalInfo/
+│   ├── Education/
+│   ├── Skills/
+│   ├── WorkExperience/
+│   └── Projects/
+├── context/             # React contexts
+│   └── LanguageContext.tsx
+├── hooks/               # Custom hooks
+│   └── useLanguage.ts
+├── model/               # TypeScript interfaces
+│   ├── cv.ts
+│   └── language.ts
+├── constants/           # Constants and data
+│   ├── cvData.ts
+│   ├── languages.ts
+│   └── translations.ts
+├── styles/              # SCSS files
+│   ├── variables.scss
+│   ├── mixins.scss
+│   └── main.scss
+├── utils/               # Utility functions
+│   └── formatters.ts
+├── App.tsx              # Main app component
+└── main.tsx             # Entry point
 ```
 
-## Pages
+## Getting Started
 
-- **Profile** (`/`) - Personal information, experience, education, skills, and certifications
-- **Blog** (`/blog`) - Blog posts and articles
-- **Portfolio** (`/portfolio`) - Project showcase
+### Prerequisites
 
-## Language Support
+- Node.js 18+ and npm
 
-The website supports two languages:
-- English (default)
-- Vietnamese
+### Installation
 
-Users can switch languages using the language switcher in the header.
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npm run dev
+```
+
+3. Open your browser and navigate to `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Customization
+
+### Updating CV Data
+
+Edit the CV data in `src/constants/cvData.ts`:
+- `cvDataEn` - English version
+- `cvDataVn` - Vietnamese version
+
+### Styling
+
+Customize colors, typography, and spacing in:
+- `src/styles/variables.scss` - SCSS variables
+- `src/styles/mixins.scss` - Reusable mixins
+- `src/styles/main.scss` - Main stylesheet
+
+### Translations
+
+Add or modify translations in `src/constants/translations.ts`
+
+## CI/CD Pipeline
+
+This project includes GitHub Actions workflows for continuous integration and deployment.
+
+### Workflows
+
+1. **CI Workflow** (`.github/workflows/ci.yml`)
+   - Runs on push and pull requests
+   - Type checks the codebase
+   - Builds the project
+   - Uploads build artifacts
+
+2. **Deploy Workflow** (`.github/workflows/deploy.yml`)
+   - Runs on push to `main` or `master` branch
+   - Builds the project
+   - Deploys to GitHub Pages
+
+### Setting up GitHub Pages
+
+1. Go to your repository Settings
+2. Navigate to Pages section
+3. Under "Source", select "GitHub Actions"
+4. The workflow will automatically deploy on push to main branch
+
+### Base Path Configuration
+
+The `vite.config.ts` is configured to use `/ProfileV2/` as base path when building in GitHub Actions. If your repository name is different, update the base path in `vite.config.ts`:
+
+```typescript
+base: process.env.GITHUB_ACTIONS ? '/your-repo-name/' : '/',
+```
 
 ## License
 
-Private project
+MIT

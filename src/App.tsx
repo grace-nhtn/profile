@@ -1,21 +1,75 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import MainLayout from '@/components/layout/Layout'
-import ProfilePage from '@/pages/profile'
-import BlogPage from '@/pages/blog'
-import PortfolioPage from '@/pages/portfolio'
+import React from 'react';
+import { Select } from 'antd';
+import { GlobalOutlined } from '@ant-design/icons';
+import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { ProfileHeader } from './components/ProfileHeader/ProfileHeader';
+import { PersonalInfo } from './components/PersonalInfo/PersonalInfo';
+import { Education } from './components/Education/Education';
+import { Skills } from './components/Skills/Skills';
+import { WorkExperience } from './components/WorkExperience/WorkExperience';
+import { Projects } from './components/Projects/Projects';
+import { Certificates } from './components/Certificates/Certificates';
+import { ThemeToggle } from './components/ThemeToggle/ThemeToggle';
+import { cvDataEn, cvDataVn } from './constants/cvData';
+import { LANGUAGES } from './constants/languages';
+import { useLanguage } from './hooks/useLanguage';
+import './styles/main.scss';
 
-function App() {
+const LanguageSwitcher: React.FC = () => {
+  const { language, setLanguage } = useLanguage();
+
   return (
-    <BrowserRouter>
-      <MainLayout>
-        <Routes>
-          <Route path="/" element={<ProfilePage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-        </Routes>
-      </MainLayout>
-    </BrowserRouter>
-  )
-}
+    <div className="language-switcher">
+      <Select
+        value={language}
+        onChange={setLanguage}
+        style={{ width: 120 }}
+        suffixIcon={<GlobalOutlined />}
+      >
+        {LANGUAGES.map((lang) => (
+          <Select.Option key={lang.code} value={lang.code}>
+            {lang.flag} {lang.label}
+          </Select.Option>
+        ))}
+      </Select>
+    </div>
+  );
+};
 
-export default App
+const AppContent: React.FC = () => {
+  const { language } = useLanguage();
+  const cvData = language === 'en' ? cvDataEn : cvDataVn;
+
+  return (
+    <div className="profile-container">
+      <ThemeToggle />
+      <LanguageSwitcher />
+      <ProfileHeader personalInfo={cvData.personalInfo} />
+      <div className="profile-content">
+        <div className="left-column">
+          <PersonalInfo personalInfo={cvData.personalInfo} />
+          <Education education={cvData.education} />
+          <Skills skills={cvData.skills} />
+          <Certificates certificates={cvData.certificates} />
+        </div>
+        <div className="right-column">
+          <WorkExperience workExperience={cvData.workExperience} />
+          <Projects projects={cvData.projects} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </ThemeProvider>
+  );
+};
+
+export default App;
