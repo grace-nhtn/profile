@@ -1,7 +1,5 @@
 import React from 'react';
 import { WorkExperience as WorkExperienceType } from '../../model/cv';
-import { translations } from '../../constants/translations';
-import { useLanguage } from '../../hooks/useLanguage';
 import './WorkExperience.scss';
 
 interface WorkExperienceProps {
@@ -9,12 +7,8 @@ interface WorkExperienceProps {
 }
 
 export const WorkExperience: React.FC<WorkExperienceProps> = ({ workExperience }) => {
-  const { language } = useLanguage();
-  const t = translations[language];
-
   return (
-    <div className="section">
-      <h2 className="section-title">{t.workExperience}</h2>
+    <div>
       {workExperience.map((exp, index) => (
         <div key={index} className="work-experience-item">
           <div className="item-header">

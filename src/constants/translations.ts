@@ -11,6 +11,14 @@ export const translations = {
     gender: 'Gender',
     dateOfBirth: 'Date of Birth',
     certificates: 'Certificates',
+    heroOpenToOpportunities: 'Open to opportunities',
+    heroSubtitle:
+      '4+ years crafting fast, elegant web interfaces with ReactJS. Based in Ho Chi Minh City — building human-centered products that feel just right.',
+    heroCtaWork: 'View My Work ↓',
+    heroCtaContact: 'Get in Touch',
+    heroStatYears: 'Years Experience',
+    heroStatProjects: 'Projects Shipped',
+    heroStatCompanies: 'Companies',
   },
   vn: {
     personalInfo: 'Thông tin Cá nhân',
@@ -24,5 +32,13 @@ export const translations = {
     gender: 'Giới tính',
     dateOfBirth: 'Ngày sinh',
     certificates: 'Chứng chỉ',
+    heroOpenToOpportunities: 'Đang tìm kiếm cơ hội mới',
+    heroSubtitle:
+      'Hơn 4 năm xây dựng giao diện web nhanh và đẹp với ReactJS. Đặt tại TP.HCM — tạo ra các sản phẩm lấy con người làm trung tâm.',
+    heroCtaWork: 'Xem dự án ↓',
+    heroCtaContact: 'Liên hệ ngay',
+    heroStatYears: 'Năm kinh nghiệm',
+    heroStatProjects: 'Dự án hoàn thành',
+    heroStatCompanies: 'Công ty',
   },
 };
